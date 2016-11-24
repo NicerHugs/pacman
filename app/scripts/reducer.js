@@ -1,16 +1,7 @@
-const initialState = {
-	gameover: false,
-	gridSize: 40,
-	levelIndex: 0,
-	currentScore: 0,
-	currentLives: 3,
-	gameLoop: null,
-	timer: 50,
-	currentGrid: [[0]]
-}
+import {combineReducers} from 'redux';
 
-function gameSession(state = initialState, action) {
-  return state
-}
+import gameSession from './reducers/gameSession';
 
-export default gameSession;
+const rootReducer = combineReducers({gameSession});
+
+export default rootReducer;

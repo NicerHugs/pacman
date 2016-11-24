@@ -7,11 +7,11 @@ import GameOverDialogue from './GameOverDialogue';
 
 export default React.createClass({
 	getInitialState() {
-		return store.getState();
+		return store.getState().gameSession;
 	},
 	componentDidMount() {
 		this.unsubscribe = store.subscribe(() => {
-			this.setState(store.getState());
+			this.setState(store.getState().gameSession);
 		});
 		initiatePac();
 	},
@@ -34,6 +34,7 @@ export default React.createClass({
 				<div>
 					Score: {score} Level: {level}
 				</div>
+				Press the spacebar to {this.state.gameLoop ? 'pause' : 'start'} the game
 				{gameOverDialogue}
 			</div>
 		)

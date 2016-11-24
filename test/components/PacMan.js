@@ -34,4 +34,12 @@ describe('PacMan component', () => {
 		pacMan.setState({'levelIndex': 58});
 		expect(pacMan).to.include.text('Level: 59');
 	});
+
+	it('should tell the user how to start/pause the game', () => {
+		expect(pacMan).to.include.text('Press the spacebar to start the game');
+		pacMan.setState({'gameLoop': 58});
+		expect(pacMan).to.include.text('Press the spacebar to pause the game');
+		pacMan.setState({'gameLoop': null});
+		expect(pacMan).to.include.text('Press the spacebar to start the game');
+	});
 });
