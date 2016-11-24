@@ -30,7 +30,7 @@ My goal is for the state to be defined declaratively. At any given moment the en
 	- `currentGrid`: array - initially a copy of the `grid` found at `levelIndex` of `levels`
 	- `currentScore`: number
 	- `currentLives`: number - starts at 3, cannot go below 0
-	- `gameLoop`: `setInterval` or `undefined` - used to stop the game loop for pause, game over, or between levels
+	- `gameLoop`: `setInterval` or `null` - used to stop the game loop for pause, game over, or between levels
 	- `timer`: number - used to count down until the game will end and pac loses
 - `pac`: object
 	- `position`: object

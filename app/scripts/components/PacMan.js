@@ -1,18 +1,27 @@
 import React from 'react';
 
+import store from '../store';
+
 import GameOverDialogue from './GameOverDialogue';
 
 export default React.createClass({
 	getInitialState() {
-		return {};
+		return store.getState();
 	},
-	componentDidMount() {},
+	componentDidMount() {
+		this.unsubscribe = store.subscribe(() => {
+			this.setState(store.getState());
+		})
+	},
+	componentWillUnmount() {
+		this.unsubscribe();
+	},
 	render() {
-		const width = 500,
-					height = 400,
-					score = 0,
-					level = 1,
-					gameover = false;
+		const width = this.state.currentGrid[0].length * this.state.gridSize,
+					height = this.state.currentGrid.length * this.state.gridSize,
+					score = this.state.currentScore,
+					level = this.state.levelIndex + 1,
+					gameover = this.state.gameover;
 		let gameOverDialogue;
 		if (gameover) {
 			gameOverDialogue = <GameOverDialogue />;
