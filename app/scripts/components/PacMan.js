@@ -1,6 +1,7 @@
 import React from 'react';
 
 import store from '../store';
+import initiatePac from '../game/init';
 
 import GameOverDialogue from './GameOverDialogue';
 
@@ -11,7 +12,8 @@ export default React.createClass({
 	componentDidMount() {
 		this.unsubscribe = store.subscribe(() => {
 			this.setState(store.getState());
-		})
+		});
+		initiatePac();
 	},
 	componentWillUnmount() {
 		this.unsubscribe();

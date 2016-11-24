@@ -52,9 +52,11 @@
     "eslint-plugin-react": "^6.6.0",
     "jsdom": "^9.4.1",
     "json-scaffold": "^0.1.0",
+    "mocha-jsdom": "^1.1.0",
     "onchange": "^2.5.0",
     "parallelshell": "^2.0.0",
     "react-addons-test-utils": "^15.3.0",
+    "sinon": "^1.17.6",
     "watchify": "^3.7.0"
   },
   "dependencies": {
