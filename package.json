@@ -23,7 +23,7 @@
     "start": "npm run build && npm run watch",
     "preinstall": "if ! command -v http-server; then npm install -g http-server; fi && if ! command -v mocha; then npm install -g mocha; fi",
     "postinstall": "npm start",
-    "test": "mocha"
+    "test": "mocha --require test/setup.js --compilers js:babel-register --recursive"
   },
   "browserify": {
     "transform": [
@@ -46,6 +46,7 @@
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
     "chai": "^3.5.0",
+    "chai-enzyme": "^0.6.1",
     "enzyme": "^2.4.1",
     "eslint": "^3.9.1",
     "eslint-plugin-react": "^6.6.0",
