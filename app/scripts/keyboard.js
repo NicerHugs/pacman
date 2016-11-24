@@ -7,7 +7,7 @@ function keydown(keyName, callback) {
 function register(name, callback) {
 	switch(name) {
 		case 'enter':
-			keydown.call(window, name, callback);
+			keydown.call(window, 'enter', callback);
 			break;
 		case 'up':
 			keydown.call(window, 'arrowup', callback);

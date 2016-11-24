@@ -4,7 +4,6 @@ import React from 'react';
 import PacMan from './components/PacMan';
 
 render((
-	<PacMan
-		squareSize={40} />
+	<PacMan />
 	), document.getElementById('container')
 )
