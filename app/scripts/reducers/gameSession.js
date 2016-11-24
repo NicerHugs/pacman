@@ -1,3 +1,5 @@
+import tick from '../game/tick';
+
 const initialState = {
 	gameover: false,
 	gridSize: 40,
@@ -17,9 +19,7 @@ function gameSession(state = initialState, action) {
 				window.clearInterval(state.gameLoop);
 				gameLoop = null;
 			} else {
-				gameLoop = window.setInterval(() => {
-					console.log('hi');
-				}, 1000/60)
+				gameLoop = window.setInterval(tick, 1000/60)
 			}
 			return Object.assign({}, state, {gameLoop});
 		default:
