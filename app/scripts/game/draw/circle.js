@@ -1,6 +1,6 @@
 export default function(ctx, gridSize, x, y, rad, color) {
-	let pixelX = x * gridSize + gridSize/2;
-	let pixelY = y * gridSize + gridSize/2;
+	let pixelX = x + gridSize/2;
+	let pixelY = y + gridSize/2;
 
 	ctx.fillStyle = color || '#000';
 	ctx.beginPath();

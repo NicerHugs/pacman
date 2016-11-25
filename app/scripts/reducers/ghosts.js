@@ -1,12 +1,16 @@
+import config from '../config';
+
+let gridSize = config.gridSize;
+
 const initialState = [
 	{
-		position: {gridX: 16, gridY: 10},
+		position: {x: 16 * gridSize, y: 10 * gridSize},
 		color: '#BB00BB'
 	}, {
-		position: {gridX: 13, gridY: 10},
+		position: {x: 13 * gridSize, y: 10 * gridSize},
 		color: '#008F00'
 	}, {
-		position: {gridX: 14, gridY: 10},
+		position: {x: 14 * gridSize, y: 10 * gridSize},
 		color: '#026AA7'
 	}
 ]

@@ -21,8 +21,10 @@ export default React.createClass({
 	render() {
 		const width = this.state.currentGrid[0].length * this.state.gridSize,
 					height = this.state.currentGrid.length * this.state.gridSize,
+					lives = this.state.currentLives,
 					score = this.state.currentScore,
 					level = this.state.levelIndex + 1,
+					timer = Math.ceil(this.state.timer / 60),
 					gameover = this.state.gameover;
 		let gameOverDialogue;
 		if (gameover) {
@@ -32,7 +34,7 @@ export default React.createClass({
 			<div>
 				<canvas ref="canvas" id="pac-canvas" width={width} height={height}/>
 				<div>
-					Score: {score} Level: {level}
+					Lives: {lives} Score: {score} Level: {level} Timer: {timer}
 				</div>
 				Press the spacebar to {this.state.gameLoop ? 'pause' : 'start'} the game
 				{gameOverDialogue}

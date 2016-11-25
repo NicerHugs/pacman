@@ -38,7 +38,8 @@ describe('gameSession reducer', () => {
 	});
 
 	it('should have a gameLoop property that defaults to null', () => {
-		expect(gameSession).to.have.property('gameLoop');	expect(gameSession.gameLoop).to.be.a.null;
+		expect(gameSession).to.have.property('gameLoop');
+		expect(gameSession.gameLoop).to.be.a.null;
 	});
 
 	it('should have a timer property that is a number', () => {

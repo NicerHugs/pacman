@@ -33,6 +33,12 @@ describe('PacMan component', () => {
 		expect(pacMan.find('canvas')).to.have.attr('height').equal('40');
 	});
 
+	it('should display the current lives', () => {
+		expect(pacMan).to.include.text('Lives: 3');
+		pacMan.setState({'currentLives': 1});
+		expect(pacMan).to.include.text('Lives: 1');
+	});
+
 	it('should display the current score', () => {
 		expect(pacMan).to.include.text('Score: 0');
 		pacMan.setState({'currentScore': 58});
@@ -43,6 +49,14 @@ describe('PacMan component', () => {
 		expect(pacMan).to.include.text('Level: 1');
 		pacMan.setState({'levelIndex': 58});
 		expect(pacMan).to.include.text('Level: 59');
+	});
+
+	it('should display the timer, which is the timer / 60', () => {
+		expect(pacMan).to.include.text('Timer: ');
+		pacMan.setState({'timer': 528});
+		expect(pacMan).to.include.text('Timer: 9');
+		pacMan.setState({'timer': 8});
+		expect(pacMan).to.include.text('Timer: 1');
 	});
 
 	it('should tell the user how to start/pause the game', () => {

@@ -1,9 +1,9 @@
 import drawCircle from './circle';
 
-export function drawPellet(ctx, gridSize, x, y) {
-	drawCircle(ctx, gridSize, x, y, 10, '#7AF759')
+export function drawPellet(ctx, gridSize, gridX, gridY) {
+	drawCircle(ctx, gridSize, gridX * gridSize, gridY * gridSize, 10, '#7AF759')
 }
 
-export function drawSuperPellet(ctx, gridSize, x, y) {
-	drawCircle(ctx, gridSize, x, y, 4, '#3BFAE3')
+export function drawSuperPellet(ctx, gridSize, gridX, gridY) {
+	drawCircle(ctx, gridSize, gridX * gridSize, gridY * gridSize, 4, '#3BFAE3')
 }

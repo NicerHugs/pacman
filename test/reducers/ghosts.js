@@ -13,12 +13,12 @@ describe('ghosts reducer', () => {
 		expect(ghosts).to.be.an.array;
 	});
 
-	it('should have a numeric gridX and gridY coordinate for each ghost', () => {
+	it('should have a numeric x and y coordinate for each ghost', () => {
 		ghosts.forEach(ghost => {
-			expect(ghost.position).to.have.property('gridX');
-			expect(ghost.position).to.have.property('gridY');
-			expect(ghost.position.gridX).to.be.a.number;
-			expect(ghost.position.gridY).to.be.a.number;
+			expect(ghost.position).to.have.property('x');
+			expect(ghost.position).to.have.property('y');
+			expect(ghost.position.x).to.be.a.number;
+			expect(ghost.position.y).to.be.a.number;
 		});
 	});
 

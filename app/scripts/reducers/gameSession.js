@@ -1,22 +1,34 @@
 import tick from '../game/tick';
 import levels from '../game/levels';
+import config from '../config';
+
+let gridSize = config.gridSize;
 
 const initialState = {
 	gameover: false,
-	gridSize: 30,
+	gridSize: gridSize,
 	levelIndex: 0,
 	currentScore: 0,
 	currentLives: 3,
 	gameLoop: null,
-	timer: 50,
+	timer: 300,
 	currentGrid: levels[0].grid
 }
 
 function gameSession(state = initialState, action) {
 	switch (action.type) {
+		case 'MODIFY_COUNTERS':
+			if (state.gameLoop !== null && state.timer > 0) {
+				return Object.assign({}, state, {timer: state.timer - 1})
+			} else if (state.gameLoop !== null) {
+				window.clearInterval(state.gameLoop);
+				return Object.assign({}, state, {gameLoop: null, gameover: true})
+			} else {
+				return state;
+			}
 		case 'TOGGLE_GAME_LOOP':
 			let gameLoop;
-			if (state.gameLoop) {
+			if (state.gameLoop !== null) {
 				window.clearInterval(state.gameLoop);
 				gameLoop = null;
 			} else {

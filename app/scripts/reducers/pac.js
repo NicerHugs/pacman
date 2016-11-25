@@ -1,5 +1,9 @@
+import config from '../config';
+
+let gridSize = config.gridSize;
+
 const initialState = {
-	position: {	gridX: 15, gridY: 16	}
+	position: {	x: 15 * gridSize, y: 16 * gridSize }
 }
 
 function pac(state = initialState, action) {

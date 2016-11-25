@@ -22,10 +22,10 @@ describe('the draw circle function', () => {
 	});
 
 	it('should create an arc with the correct arguments', () => {
-		drawCircle(ctx, 40, 1, 3, 2);
-		drawCircle(ctx, 20, 5, 2, 10);
+		drawCircle(ctx, 40, 160, 40, 2);
+		drawCircle(ctx, 20, 100, 40, 10);
 		expect(ctx.arc.calledTwice).to.be.true;
-		expect(ctx.arc.calledWith(60, 140, 20, 0, Math.PI * 2, false)).to.be.true
+		expect(ctx.arc.calledWith(180, 60, 20, 0, Math.PI * 2, false)).to.be.true
 		expect(ctx.arc.calledWith(110, 50, 2, 0, Math.PI * 2, false)).to.be.true
 	});
 

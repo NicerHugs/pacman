@@ -1,0 +1,2 @@
+- space bar should only respond if gameover is false
+- arrowkeys should only respond if gameloop is true
