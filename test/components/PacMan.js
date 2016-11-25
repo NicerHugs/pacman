@@ -7,6 +7,7 @@ import PacMan from '../../app/scripts/components/PacMan';
 
 describe('PacMan component', () => {
 	let pacMan;
+
 	beforeEach(() => {
 		pacMan = shallow(<PacMan/>);
 	});
