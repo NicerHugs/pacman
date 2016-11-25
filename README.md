@@ -8,21 +8,6 @@ I was inspired by [this learn to javascript and build PacMan tutorial](http://ww
 My goal is for the state to be defined declaratively. At any given moment the entire game should be recreatable using the current state object, much like a Redux based React app would be.
 
 ### How the State should be
-- `levels`: array - all available levels and level data, effectively read only.
-	- `level`: object
-		- `grid`: array
-			- `row`: array
-				- `cell`: number
-					- 0: empty
-					- 1: wall
-					- 2: pellet
-					- 3: superPellet
-		- `pacStartPosition`: object
-			- `gridX`: number
-			- `gridY`: number
-		- `ghostsStartPosition`: object
-			- `gridX`: number
-			- `gridY`: number
 - `gameSession`: object
 	- `gameover`: boolean - used to determine whether to display the gameover dialog box
 	- `gridSize`: used for determining how large to make all the things. probably determined by the user's screen size
@@ -105,3 +90,21 @@ Drawing should be based entirely on current state. Each draw cycle will need to:
 
 ### Some things are still React tho?
 Some things are still handled by React. Namely, the gameover dialogue (and interaction with it), the score, timer, and level displays, and the canvas itself (tho not the art/gameplay drawn on it).
+
+### Some other stuff
+After some thought, I've decided that the read only feature of the state (namely the initial setup for a given level) don't need to live in the state object at all. Maybe I'm wrong about this, I'd love to learn why if so. Until then, tho, I'm putting them in their own file in the game folder. here's their description which used to live in the state description above:
+- `levels`: array - all available levels and level data
+	- `level`: object
+		- `grid`: array
+			- `row`: array
+				- `cell`: number
+					- 0: empty
+					- 1: wall
+					- 2: pellet
+					- 3: superPellet
+		- `pacStartPosition`: object
+			- `gridX`: number
+			- `gridY`: number
+		- `ghostsStartPosition`: object
+			- `gridX`: number
+			- `gridY`: number

@@ -23,6 +23,15 @@ describe('PacMan component', () => {
 		expect(pacMan).to.have.exactly(1).descendants('canvas#pac-canvas');
 	});
 
+	it('should render the canvas to the proper size', () => {
+		pacMan.setState({currentGrid: [[1]], gridSize: 50})
+		expect(pacMan.find('canvas')).to.have.attr('width').equal('50');
+		expect(pacMan.find('canvas')).to.have.attr('height').equal('50');
+		pacMan.setState({currentGrid: [[1,2,1,2],[1,2,1,1]], gridSize: 20})
+		expect(pacMan.find('canvas')).to.have.attr('width').equal('80');
+		expect(pacMan.find('canvas')).to.have.attr('height').equal('40');
+	});
+
 	it('should display the current score', () => {
 		expect(pacMan).to.include.text('Score: 0');
 		pacMan.setState({'currentScore': 58});
