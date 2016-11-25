@@ -1,8 +1,5 @@
 const initialState = {
-	position: {
-		x: 2,
-		y: 1
-	}
+	position: {	x: 15, y: 16	}
 }
 
 function pac(state = initialState, action) {
