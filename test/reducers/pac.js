@@ -14,10 +14,10 @@ describe('pac reducer', () => {
 		expect(pac.position).to.be.an.object;
 	});
 
-	it('should have an x and y coordinate that is a number', () => {
-		expect(pac.position).to.have.property('x');
-		expect(pac.position).to.have.property('y');
-		expect(pac.position.x).to.be.a.number;
-		expect(pac.position.y).to.be.a.number;
+	it('should have an gridX and gridY coordinate that is a number', () => {
+		expect(pac.position).to.have.property('gridX');
+		expect(pac.position).to.have.property('gridY');
+		expect(pac.position.gridX).to.be.a.number;
+		expect(pac.position.gridY).to.be.a.number;
 	});
 });

@@ -1,12 +1,12 @@
 const initialState = [
 	{
-		position: {x: 16, y: 10},
+		position: {gridX: 16, gridY: 10},
 		color: '#BB00BB'
 	}, {
-		position: {x: 13, y: 10},
+		position: {gridX: 13, gridY: 10},
 		color: '#008F00'
 	}, {
-		position: {x: 14, y: 10},
+		position: {gridX: 14, gridY: 10},
 		color: '#026AA7'
 	}
 ]

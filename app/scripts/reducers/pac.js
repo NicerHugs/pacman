@@ -1,5 +1,5 @@
 const initialState = {
-	position: {	x: 15, y: 16	}
+	position: {	gridX: 15, gridY: 16	}
 }
 
 function pac(state = initialState, action) {

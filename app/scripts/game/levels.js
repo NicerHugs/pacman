@@ -25,8 +25,8 @@ export default [
 			[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
 		],
 
-		pacStartPosition: {gridX: 1, gridY: 1},
-		ghostsStartPosition: {grixX: 4, gridY: 2}
+		pacStartPosition: {gridX: 15, gridY: 16},
+		ghostsStartPosition: {gridX: 14, gridY: 10}
 	}, {
 		grid: [
 			[1,1,1,1,1,1],
