@@ -13,7 +13,7 @@ export default React.createClass({
 		this.unsubscribe = store.subscribe(() => {
 			this.setState(store.getState().gameSession);
 		});
-		initiatePac();
+		initiatePac(this.refs.canvas);
 	},
 	componentWillUnmount() {
 		this.unsubscribe();

@@ -20,7 +20,7 @@ function gameSession(state = initialState, action) {
 				window.clearInterval(state.gameLoop);
 				gameLoop = null;
 			} else {
-				gameLoop = window.setInterval(tick, 1000/60)
+				gameLoop = window.setInterval(tick.bind(window, action.ctx), 1000/60)
 			}
 			return Object.assign({}, state, {gameLoop});
 		default:
