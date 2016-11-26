@@ -17,6 +17,8 @@ const initialState = {
 
 function gameSession(state = initialState, action) {
 	switch (action.type) {
+		case 'RESET_GAME':
+			return initialState;
 		case 'MODIFY_COUNTERS':
 			if (state.gameLoop !== null && state.timer > 0) {
 				return Object.assign({}, state, {timer: state.timer - 1})
@@ -28,13 +30,14 @@ function gameSession(state = initialState, action) {
 			}
 		case 'TOGGLE_GAME_LOOP':
 			let gameLoop;
-			if (state.gameLoop !== null) {
-				window.clearInterval(state.gameLoop);
-				gameLoop = null;
-			} else {
-				gameLoop = window.setInterval(tick.bind(window, action.ctx), 1000/60)
-			}
-			return Object.assign({}, state, {gameLoop});
+			if (state.gameover === false) {
+				if (state.gameLoop !== null) {
+					window.clearInterval(state.gameLoop);
+				} else {
+					gameLoop = window.setInterval(tick.bind(window, action.ctx), 1000/60)
+				}
+				return Object.assign({}, state, {gameLoop});
+			} else return state;
 		default:
 			return state;
 	}

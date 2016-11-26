@@ -1,2 +1,3 @@
 - space bar should only respond if gameover is false
 - arrowkeys should only respond if gameloop is true
+- modify counter action for pac (power counter) and ghosts (frozen counter)

@@ -1,3 +1,20 @@
 #pac-canvas {
   background-color: #000;
 }
+
+.modal-dialogue {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.5);
+
+	form {
+		background: white;
+		width: 60%;
+		text-align: center;
+		height: 50vh;
+		margin: 0 auto;
+	}
+}
