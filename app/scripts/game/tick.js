@@ -10,5 +10,6 @@ export default function(ctx) {
 				bodies = {pac, ghosts};
 
 	store.dispatch({type: 'MODIFY_COUNTERS'});
+	store.dispatch({type: 'MOVE_BODIES', grid});
 	draw(ctx, gridSize, grid, bodies);
 }

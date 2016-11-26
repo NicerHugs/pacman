@@ -11,7 +11,7 @@ const initialState = {
 	currentScore: 0,
 	currentLives: 3,
 	gameLoop: null,
-	timer: 300,
+	timer: 18000,
 	currentGrid: levels[0].grid
 }
 
@@ -33,6 +33,7 @@ function gameSession(state = initialState, action) {
 			if (state.gameover === false) {
 				if (state.gameLoop !== null) {
 					window.clearInterval(state.gameLoop);
+					gameLoop = null;
 				} else {
 					gameLoop = window.setInterval(tick.bind(window, action.ctx), 1000/60)
 				}

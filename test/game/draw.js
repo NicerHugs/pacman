@@ -31,7 +31,7 @@ describe('the draw function', () => {
 		ctx2.clearRect = spy();
 		draw(ctx2, 50, [], bodies);
 		expect(ctx2.clearRect.calledOnce).to.be.true;
-		expect(ctx2.clearRect.calledWith(0,0,30,80)).to.be.true;
+		expect(ctx2.clearRect.calledWith(0,0,80,30)).to.be.true;
 	});
 
 	it('should call fillRect for each 1 in the grid', () => {

@@ -12,9 +12,13 @@ export default function(canvas) {
 	draw(ctx, gs.gridSize, gs.currentGrid, bodies);
 	keyboard({
 		space: () => {store.dispatch({type: 'TOGGLE_GAME_LOOP', ctx})},
-		up: () => {console.log('up');},
-		down: () => {console.log('down');},
-		left: () => {console.log('left');},
-		right: () => {console.log('right');},
+		up: () => {if (store.getState().gameSession.gameLoop !== null)
+			store.dispatch({type: 'CHANGE_INTENT', dir: 'up'});},
+		down: () => {if (store.getState().gameSession.gameLoop !== null)
+			store.dispatch({type: 'CHANGE_INTENT', dir: 'down'});},
+		left: () => {if (store.getState().gameSession.gameLoop !== null)
+			store.dispatch({type: 'CHANGE_INTENT', dir: 'left'});},
+		right: () => {if (store.getState().gameSession.gameLoop !== null)
+			store.dispatch({type: 'CHANGE_INTENT', dir: 'right'});},
 	})
 }
