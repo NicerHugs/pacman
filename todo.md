@@ -1,2 +1,3 @@
-- arrowkeys should only respond if gameloop is true
 - modify counter action for pac (power counter) and ghosts (frozen counter)
+- ghosts should respond to MOVE_BODIES action
+- increase pac's powerCount on superpellet chomp

@@ -1,5 +1,6 @@
 import tick from '../game/tick';
 import levels from '../game/levels';
+import {boardCleared} from './helpers';
 import config from '../config';
 
 let gridSize = config.gridSize;
@@ -17,6 +18,15 @@ const initialState = {
 
 function gameSession(state = initialState, action) {
 	switch (action.type) {
+		case 'PAC_ATE_PELLET':
+			let {gridX, gridY} = action.pellet.coords,
+					currentGrid = [].concat(state.currentGrid),
+					currentScore = state.currentScore,
+					currentLives = currentScore % 1000 === 0 && currentScore > 0 ? state.currentLives + 1 : state.currentLives;
+			currentGrid[gridY][gridX] = 0;
+			currentScore += action.pellet.type === 'pellet' ? 1 : 10;
+
+			return Object.assign({}, state, {currentGrid, currentScore, currentLives});
 		case 'RESET_GAME':
 			return initialState;
 		case 'MODIFY_COUNTERS':
