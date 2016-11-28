@@ -1,6 +1,6 @@
-import {expect} from 'expect';
+import {expect} from 'chai';
 
-decribe('pacAtePellet game helper function', () => {
+describe('pacAtePellet game helper function', () => {
 	it('should exist')
 	it('should be a function')
 	it('should return undefined if pac is not centered on a pellet cell')

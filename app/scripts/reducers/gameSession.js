@@ -13,14 +13,36 @@ const initialState = {
 	currentLives: 3,
 	gameLoop: null,
 	timer: 18000,
-	currentGrid: levels[0].grid
+	currentGrid: levels[0].grid.map(a => a),
+	gameWon: false
 }
 
 function gameSession(state = initialState, action) {
 	switch (action.type) {
+		case 'LEVEL_COMPLETE':
+			let levelInfo = {
+				gameWon: true,
+				score: state.score + Math.ceil(state.timer/60),
+				gameover: true
+			};
+			if (levels[action.nextLevel]) {
+				levelInfo = {
+					levelIndex: action.nextLevel,
+					currentGrid: levels[action.nextLevel].grid.map(a => a),
+					score: state.score + Math.ceil(state.timer/60),
+					timer: 18000,
+					gameover: false,
+				}
+			};
+			return Object.assign({}, state, levelInfo)
 		case 'PAC_ATE_PELLET':
 			let {gridX, gridY} = action.pellet.coords,
-					currentGrid = [].concat(state.currentGrid),
+					currentGrid = state.currentGrid.map((row, y) => {
+						return row.map((cell, x) => {
+							if (x === gridX && y === gridY) return 0;
+							else return cell;
+						})
+					}),
 					currentScore = state.currentScore,
 					currentLives = currentScore % 1000 === 0 && currentScore > 0 ? state.currentLives + 1 : state.currentLives;
 			currentGrid[gridY][gridX] = 0;

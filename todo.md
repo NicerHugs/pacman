@@ -1,3 +1,7 @@
+- handle LEVEL_COMPLETE action when there is no next level (tell user they won);
+- draw new level and return bodies to starting location after winning level
 - modify counter action for pac (power counter) and ghosts (frozen counter)
 - ghosts should respond to MOVE_BODIES action
+- handle pac and ghost collisions
 - increase pac's powerCount on superpellet chomp
+- currently pac will only get a new life if his score exactly equals a multiple of 1000, fix that.

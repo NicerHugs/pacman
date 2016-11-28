@@ -25,10 +25,11 @@ export default React.createClass({
 					score = this.state.currentScore,
 					level = this.state.levelIndex + 1,
 					timer = Math.ceil(this.state.timer / 60),
-					gameover = this.state.gameover;
+					gameover = this.state.gameover,
+					gameWon = this.state.gameWon;
 		let gameOverDialogue;
 		if (gameover) {
-			gameOverDialogue = <GameOverDialogue />;
+			gameOverDialogue = <GameOverDialogue won={gameWon} score={score}/>;
 		}
 		return(
 			<div>

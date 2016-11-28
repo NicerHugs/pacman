@@ -7,7 +7,8 @@ export default React.createClass({
 		return (
 			<div className="modal-dialogue">
 				<form>
-					<h3>Game Over</h3>
+					<h3>{this.props.won ? 'You Win!' : 'GameOver'}</h3>
+					<h4>Final Score: {this.props.score}</h4>
 					<input
 						type="button"
 						onClick={store.dispatch.bind(store, {type:'RESET_GAME'})}
